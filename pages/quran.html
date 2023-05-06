@@ -1,0 +1,165 @@
+<!DOCTYPE html> <html lang="ar" dir="rtl"> <head> <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>حفظ القراءن</title>
+   <link rel="stylesheet" href="../style.css">
+   <link rel="stylesheet" href="../animation.css">
+   <link rel="stylesheet" href="table.css">
+
+   <link
+   rel="stylesheet"
+   href="../mobile-screen.css"
+   media="(max-width: 800px)"
+ />  
+  <script src="../jquery-3.6.0.min.js"></script>
+    
+    </head> 
+    <body> 
+      <header  class="hide-when-mobile">
+        <h1>&#129505;&#x1F4AA;وسارعوا &#x1F4AA;&#129505; </h1>
+  
+        <ul class="flex">
+          <li class="main-list">
+            <a class="main-link" href="../index.html">الصفحة الرئسية</a>
+          </li>
+  
+          <li class="main-list">
+            <a class="main-link" href="#">اهداف اسبوعية</a>
+  
+            <ul class="sub-ul">
+              <li><a href="../pages/react.html">كورس ريأكت</a></li>
+              <li><a href="../pages/cors-ai.html">كورس AI</a></li>
+            <li><a href="../pages/studies.html">مذاكرة</a></li>
+
+            </ul>
+          </li>
+  
+          <li class="main-list">
+            <a class="main-link" href="../pages/month.html">اهداف شهرية</a>
+          </li>
+        </ul>
+      </header>
+
+
+      <header class="show-when-mobile">
+        <h1>&#129505;&#x1F4AA;وسارعوا &#x1F4AA;&#129505; </h1>
+  
+        <label class="absolute" for="burger">
+          <i class="fas fa-bars"></i>
+        </label>
+  
+        <input id="burger" type="checkbox" />
+  
+
+        <div class="show-on-click">
+          <div class="main-div">
+            
+            <label for="html"><a href="../index.html">الصفحة الرئسية</a><i class="fas fa-plus"></i> </label>
+            <input id="html" type="checkbox">
+          </div>
+  
+
+          <div class="main-div">
+          
+            <label for="html"><a href="../pages/yeer.html">الاهداف السنوية</a><i class="fas fa-plus"></i> </label>
+            <input id="html" type="checkbox">
+          </div>
+  
+  
+  
+          <div class="main-div">
+            <label for="css"><a href="../pages/month.html">الاهداف الشهرية</a><i class="fas fa-plus"></i></label>
+            <input id="css" type="checkbox">
+          </div>
+        </div>
+  
+  
+      </header>
+      <button style="background-color: #3e8e41; font-size: 15px; color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      margin-left: 5px;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;" id="add-btn">Add Row</button>  
+      <center><h2 style="color: #333;">حفظ القراءن</h2></center>
+
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>الصفحة</th>
+            <th>المراجعة</th>
+            <th>الحالة</th>
+            <th>الاجراءت</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John</td>
+            <td>ff</td>
+            <td>قيد التنفيذ</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane</td>
+            <td>ff</td>
+            <td>قيد التنفيذ</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    
+<footer>
+  Designed and developed by Courses4Arab.com
+<span>&#129505;</span>
+</footer>
+<script>
+  $(document).ready(function() {
+  // Load table data from localStorage
+  if (localStorage.getItem('tableDataQuran')) {
+    $('#myTable tbody').html(localStorage.getItem('tableDataQuran'));
+  }
+
+  // add row
+  $('#add-btn').click(function() {
+    var newRow = '<tr><td></td><td></td><td></td><td>قيد التنفيذ</td><td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td></tr>';
+    $('#myTable tbody').append(newRow);
+    updateLocalStorage();
+  });
+
+  // edit row
+  $('#myTable').on('click', '.edit-btn', function() {
+    var row = $(this).closest('tr');
+    if ($(this).text() == 'Edit') {
+      row.find('td').not(':last-child').attr('contentEditable', true);
+      $(this).text('Save');
+    } else {
+      row.find('td').not(':last-child').attr('contentEditable', false);
+      $(this).text('Edit');
+      updateLocalStorage();
+    }
+  });
+
+  // delete row
+  $('#myTable').on('click', '.delete-btn', function() {
+    $(this).closest('tr').remove();
+    updateLocalStorage();
+  });
+
+  // Update localStorage with table data
+  function updateLocalStorage() {
+    localStorage.setItem('tableDataQuran', $('#myTable tbody').html());
+  }
+});
+</script>
+    </body> </html>

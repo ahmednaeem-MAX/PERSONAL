@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الصفحة الرئسية</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="mobile-screen.css"
+      media="(max-width: 800px)"
+    />
+  </head>
+
+  <body>
+    <header class="hide-when-mobile">
+      <h1>&#129505;&#x1F4AA;وسارعوا &#x1F4AA;&#129505; </h1>
+
+      <ul class="flex">
+        
+        <li class="main-list">
+          <a class="main-link" href="#">اهداف اسبوعية</a>
+
+          <ul class="sub-ul">
+            <li><a href="./pages/react.html">كورس ريأكت</a></li>
+            <li><a href="./pages/studieses.html">مذاكرة</a></li>
+            <li><a href="./pages/cors-ai.html">كورس AI</a></li>
+            <li><a href="./pages/">حفظ القراءن</a></li>
+
+          </ul>
+        </li>
+
+        <li class="main-list">
+          <a class="main-link" href="./pages/yeer.html">اهداف سنوية</a>
+        </li>
+
+        <li class="main-list">
+          <a class="main-link" href="./pages/month.html">اهداف شهرية</a>
+        </li>
+      </ul>
+    </header>
+
+
+
+    <header class="show-when-mobile">
+      <h1>&#129505;&#x1F4AA;وسارعوا &#x1F4AA;&#129505; </h1>
+
+      <label  class="absolute" for="burger">
+        <i  class="fas fa-bars"></i>
+      </label>
+
+      <input  id="burger" type="checkbox" />
+
+      <div class="show-on-click">
+        <div class="main-div">
+          
+          <label for="html">الاهداف الاسبوعية<i class="fas fa-plus"></i> </label>
+          <input id="html" type="checkbox">
+
+          <ul class="sub-div">
+            <li><a href="./pages/react.html">كورس ريأكت</a></li>
+            <li><a href="./pages/quran.html">حفظ القراءن</a></li>
+            <li><a href="./pages/cors-ai.html">كورس AI</a></li>
+            <li><a href="./pages/cors-ai.html">مذاكرة</a></li>
+            
+          </ul>
+        </div>
+        <div class="main-div">
+          <label for="css"><a href="./pages/month.html">الاهداف الشهرية</a><i class="fas fa-plus"></i></label>
+          <input id="css" type="checkbox">
+        </div>
+
+
+        <div class="main-div">
+          <label for="js"><a href="./pages/yeer.html">الاهداف السنوية</a><i class="fas fa-plus"></i></label>
+            <input id="js" type="checkbox">
+        </div>
+      </div>
+    </header>
+ 
+
+<main>
+  Respossive Drop-down <br>
+  Menu Bar <br>
+  HTML & CSS only
+</main>
+
+
+<footer>
+  Designed and developed by Courses4Arab.com
+<span>&#129505;</span>
+</footer>
+
+
+  </body>
+</html>
